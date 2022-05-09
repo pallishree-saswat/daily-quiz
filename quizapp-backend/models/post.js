@@ -1,27 +1,30 @@
 const mongoose = require("mongoose");
 const { Schema, ObjectId } = mongoose;
 
-const linkSchema = new mongoose.Schema(
+const questionSchema = new mongoose.Schema(
   {
-    link: {
+    question: {
       type: String,
       trim: true,
       required: true,
     },
-    title: {
+    answerOptions: {},
+    correctAnswer: {
       type: String,
       trim: true,
       required: true,
     },
-    urlPreview: {},
+    category: {
+      type: ObjectId,
+      ref: "Category",
+    },
     postedBy: {
       type: ObjectId,
       ref: "User",
     },
     views: { type: Number, default: 0 },
-    likes: [{ type: ObjectId, ref: "User" }],
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Link", linkSchema);
+module.exports = mongoose.model("Question", questionSchema);

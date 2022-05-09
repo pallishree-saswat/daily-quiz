@@ -3,7 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
-const linkRoutes = require("./routes/link");
+const postRoutes = require("./routes/post");
+const categoryRoutes = require("./routes/category");
 
 const morgan = require("morgan");
 
@@ -24,7 +25,8 @@ app.use(morgan("dev"));
 
 // route middlewares
 app.use("/api", authRoutes);
-app.use("/api", linkRoutes);
+app.use("/api", postRoutes);
+app.use("/api", categoryRoutes);
 
 const port = process.env.PORT || 8000;
 

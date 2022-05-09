@@ -23,7 +23,8 @@
     "morgan": "^1.10.0",
     "nanoid": "^2.1.11",
     "navigator": "^1.0.1",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
